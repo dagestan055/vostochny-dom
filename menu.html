@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Меню — Восточный дом</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/menu-full.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html"
+        >ВОСТОЧНЫЙ <i>ДОМ</i><small>КАФЕ · ВОЛГОГРАД</small></a
+      >
+      <nav>
+        <a href="menu.html">Меню</a><a href="about.html">О кафе</a
+        ><a href="delivery.html">Доставка</a
+        ><a href="contacts.html">Контакты</a>
+      </nav>
+      <a class="order top-order" href="delivery.html">Заказать <b>↗</b></a>
+    </header>
+    <main class="menu-page">
+      <section class="menu-intro">
+        <div>
+          <p class="eyebrow">МЕНЮ ВОСТОЧНОГО ДОМА</p>
+          <h1>Всё, что<br />хочется <i>съесть.</i></h1>
+          <p>
+            Полное меню из карточки кафе на Яндекс Картах. Цены и состав лучше
+            подтверждать у администратора перед заказом.
+          </p>
+        </div>
+        <img
+          src="assets/images/yandex-7.jpg"
+          alt="Меню блюд на мангале кафе Восточный дом"
+        /><small>ФОТО ИЗ КАРТОЧКИ КАФЕ НА ЯНДЕКС КАРТАХ</small>
+      </section>
+      <div class="menu-filters" id="filters"></div>
+      <section class="full-menu" id="full-menu"></section>
+    </main>
+    <footer>
+      <a class="brand" href="index.html"
+        >ВОСТОЧНЫЙ <i>ДОМ</i><small>КАФЕ · ВОЛГОГРАД</small></a
+      >
+      <div>
+        <span>АДРЕС</span
+        ><a href="contacts.html">проспект Маршала Жукова, 127А</a>
+      </div>
+      <div>
+        <span>ТЕЛЕФОН</span><a href="tel:+79616925884">+7 (961) 692-58-84</a>
+      </div>
+      <div>
+        <span>ОТКРЫТО</span>
+        <p>до 22:00</p>
+      </div>
+    </footer>
+    <script>
+      const menu = {
+        Шашлыки: [
+          "Люля-кебаб говядина|390 ₽|150 г",
+          "Шашлык из баранины|450 ₽|150 г",
+          "Шашлык из говядины|420 ₽|150 г",
+          "Шашлык из куриной грудки|390 ₽|150 г",
+          "Картофель на углях|390 ₽|150 г",
+          "Люля-кебаб из баранины|490 ₽|150 г",
+          "Люля-кебаб из говядины|480 ₽|150 г",
+          "Люля-кебаб из курицы|450 ₽|150 г",
+          "Овощи на мангале|390 ₽|150 г",
+          "Шампиньоны на углях|390 ₽|150 г",
+          "Шашлык из баранины|510 ₽|150 г",
+          "Шашлык из говядины|480 ₽|150 г",
+          "Шашлык из куриной грудки|450 ₽|150 г",
+        ],
+        Напитки: [
+          "Айс Латте|450 ₽|300 мл",
+          "Компот из сухофруктов|220 ₽|500 мл",
+          "Лимонад «Малина-имбирь»|290 ₽|300 мл",
+          "Лимонад «Маракуйя»|290 ₽|300 мл",
+          "Морс из клюквы|250 ₽|500 мл",
+          "Чай зелёный|200 ₽|300 мл",
+          "Чай из облепихи|220 ₽|300 мл",
+          "Чай с малиной|220 ₽|300 мл",
+          "Чай чёрный|200 ₽|300 мл",
+        ],
+        Супы: [
+          "Борщ|420 ₽|350 г",
+          "Куриный суп|420 ₽|350 г",
+          "Лагман узбекский|435 ₽|330 г",
+          "Лагман уйгурский|455 ₽|350 г",
+          "Мастава|430 ₽|350 г",
+          "Шурпа из баранины|490 ₽|350 г",
+          "Шурпа из говядины|450 ₽|350 г",
+        ],
+        "Горячие блюда": [
+          "Бефстроганов|550 ₽|350 г",
+          "Гуляш|540 ₽|350 г",
+          "Казан-кебаб говядина|570 ₽|350 г",
+          "Лагман жареный|500 ₽|350 г",
+          "Плов ташкентский|500 ₽|400 г",
+        ],
+        Салаты: [
+          "Ачучук|390 ₽|180 г",
+          "Греческий|420 ₽|180 г",
+          "Оливье|400 ₽|180 г",
+          "Свежесть|390 ₽|180 г",
+          "Цезарь с курицей|450 ₽|180 г",
+        ],
+        Соусы: [
+          "Аджика острая|50 ₽|30 г",
+          "Гранатовый|50 ₽|30 г",
+          "Соус чесночный|50 ₽|30 г",
+          "Соус шашлычный|50 ₽|30 г",
+          "Соус шашлычный|5 ₽|5 мл",
+        ],
+        Гарниры: [
+          "Гречка отварная|200 ₽|200 г",
+          "Картофель фри|300 ₽|200 г",
+          "Макароны отварные|200 ₽|200 г",
+          "Рис отварной|200 ₽|200 г",
+        ],
+        Выпечка: [
+          "Лепешка тандырная|90 ₽|300 г",
+          "Самса с говядиной|190 ₽|150 г",
+          "Шаурма куриная|330 ₽|250 г",
+        ],
+      };
+      /* Фотографии — те же изображения, которые показаны рядом с блюдами в меню Яндекс Карт. */
+      const photoRows = [
+        [
+          "0f800f2ed99c4b4897a4907a9f1fb50c",
+          "55077f1d1b2544b796c575fc2f0ac74a",
+          "9ece400011d149b2b12d8726eebf299e",
+          "f63e71630e154613ba78ca09d59ef33d",
+          "7e30e10bedfe42b99e9846cc23da226a",
+          "e473ee82eee84ec398574531828ced7c",
+          "701878e81b634a0e9c751843c329586e",
+          "c5f767673dae46f3a814256a8e431fdb",
+          "4af102a15ae84bc98619416d58ceb8ad",
+          "c836aae8ff904f46b70e1279f9428fa3",
+          "f66ff529f46a4381a88ebde0db4641ab",
+          "e49ea870eaf847f08420489b57b7de76",
+          "aca43480b03745f386d4e632628e9a6d",
+        ],
+        [
+          "b4688c9570384eb39bd2d5b2a950583f",
+          "4d781b594d9e487b905560345069ce7d",
+          "81580a31491d48d59cd474925ae01f53",
+          "340dd5882bbc4383bf8bf7dd4d73d1d0",
+          "3467f12f30124efdb52fb71e6c9c7e1e",
+          "f3f6f076fbfb44cf8ba7608154cb3876",
+          "a733c2b500d046d9b73b5c90d7e4fcca",
+          "648f0ce9d4874fafb8afc0f5edfe04f0",
+          "83df6809c5cd490da9317ac8826a8cc0",
+        ],
+        [
+          "99c5872ab81a451c80856b28aed73f56",
+          "30169f65c38b47638d952a1ef15851e3",
+          "846d1ce1cb714862b1f3b349202eae05",
+          "3948cda741774d6b8860aac4daf99c51",
+          "a372de21cbd4472da935b9277b81b75b",
+          "d0e217b08e7b4dc09e1db8986eb583f2",
+          "a0d4afec9a634f3a86fbf5df29ac7906",
+        ],
+        [
+          "e7bf3666e96c40fd92c5e4c77f8797f6",
+          "70c5af74706f44f8a72849e7fc31a785",
+          "f1c31af0b6374be0a028af4069bfdb7f",
+          "8cba088c570f4bc1821edef5ce1239bc",
+          "0b8c52c49dae4926b2e2aceb2ec8addf",
+        ],
+        [
+          "0aa77bc7ce864a669e620bef91f80638",
+          "439140862176459798adf19b07948fb8",
+          "4894c111dbae46398c5c584bba4d3e9c",
+          "f99396674c7548fc95a10dc1e3016ed9",
+          "822f6eda3ac54cf6ad96190bccb6754d",
+        ],
+        [
+          "8d5631ae727d43549929d92480fc5120",
+          "3e40fb4d3ee34bc48564f1445e9b52c3",
+          "42cd33c911d34f3495a758c54a0ab5af",
+          "bcbe54991d014eca9beb0be27e858cf3",
+          "a2584430c61847c19e2b179612facb97",
+        ],
+        [
+          "a2584430c61847c19e2b179612facb97",
+          "b469843c0ad54a4fb54d42ef2c08c561",
+          "edcacaa99b54476aaa4ce19be305f76b",
+          "74b8380e32984c86ad72b581ab7b4487",
+        ],
+        [
+          "26d5f763492d47e0a709825e6750623e",
+          "71b898f94f814ffeb8a87dc9a84616d4",
+          "94ec03a7555347a38e6c52e2911cd5eb",
+        ],
+      ];
+      const photoLookup = {
+        "0f800f2ed99c4b4897a4907a9f1fb50c": "21029937",
+        "55077f1d1b2544b796c575fc2f0ac74a": "17763632",
+        "9ece400011d149b2b12d8726eebf299e": "19850737",
+        f63e71630e154613ba78ca09d59ef33d: "20410873",
+        "7e30e10bedfe42b99e9846cc23da226a": "17768400",
+        e473ee82eee84ec398574531828ced7c: "17768400",
+        "701878e81b634a0e9c751843c329586e": "20380622",
+        c5f767673dae46f3a814256a8e431fdb: "20814981",
+        "4af102a15ae84bc98619416d58ceb8ad": "20808583",
+        c836aae8ff904f46b70e1279f9428fa3: "20012354",
+        f66ff529f46a4381a88ebde0db4641ab: "20380622",
+        e49ea870eaf847f08420489b57b7de76: "19855951",
+        aca43480b03745f386d4e632628e9a6d: "20380622",
+        b4688c9570384eb39bd2d5b2a950583f: "17768400",
+        "4d781b594d9e487b905560345069ce7d": "20380622",
+        "81580a31491d48d59cd474925ae01f53": "20410873",
+        "340dd5882bbc4383bf8bf7dd4d73d1d0": "20380622",
+        "3467f12f30124efdb52fb71e6c9c7e1e": "20808583",
+        f3f6f076fbfb44cf8ba7608154cb3876: "20380622",
+        a733c2b500d046d9b73b5c90d7e4fcca: "19855951",
+        "648f0ce9d4874fafb8afc0f5edfe04f0": "20410873",
+        "83df6809c5cd490da9317ac8826a8cc0": "20012354",
+        "99c5872ab81a451c80856b28aed73f56": "19855951",
+        "30169f65c38b47638d952a1ef15851e3": "20814981",
+        "846d1ce1cb714862b1f3b349202eae05": "17742006",
+        "3948cda741774d6b8860aac4daf99c51": "17768400",
+        a372de21cbd4472da935b9277b81b75b: "19853791",
+        d0e217b08e7b4dc09e1db8986eb583f2: "19855951",
+        a0d4afec9a634f3a86fbf5df29ac7906: "17763632",
+        e7bf3666e96c40fd92c5e4c77f8797f6: "20260744",
+        "70c5af74706f44f8a72849e7fc31a785": "17768400",
+        f1c31af0b6374be0a028af4069bfdb7f: "18473941",
+        "8cba088c570f4bc1821edef5ce1239bc": "20022421",
+        "0b8c52c49dae4926b2e2aceb2ec8addf": "20814981",
+        "0aa77bc7ce864a669e620bef91f80638": "19855951",
+        "439140862176459798adf19b07948fb8": "20410873",
+        "4894c111dbae46398c5c584bba4d3e9c": "20380622",
+        f99396674c7548fc95a10dc1e3016ed9: "20637206",
+        "822f6eda3ac54cf6ad96190bccb6754d": "20022421",
+        "8d5631ae727d43549929d92480fc5120": "17742006",
+        "3e40fb4d3ee34bc48564f1445e9b52c3": "19396445",
+        "42cd33c911d34f3495a758c54a0ab5af": "20412437",
+        bcbe54991d014eca9beb0be27e858cf3: "17735863",
+        a2584430c61847c19e2b179612facb97: "20179955",
+        b469843c0ad54a4fb54d42ef2c08c561: "20637206",
+        edcacaa99b54476aaa4ce19be305f76b: "20808583",
+        "74b8380e32984c86ad72b581ab7b4487": "21029937",
+        "26d5f763492d47e0a709825e6750623e": "21029937",
+        "71b898f94f814ffeb8a87dc9a84616d4": "17735863",
+        "94ec03a7555347a38e6c52e2911cd5eb": "20380622",
+      };
+      const imageUrl = (id) =>
+        `https://avatars.mds.yandex.net/get-eda/${photoLookup[id]}/${id}/400x400`;
+      const out = document.querySelector("#full-menu"),
+        filters = document.querySelector("#filters");
+      Object.entries(menu).forEach(([cat, items], i) => {
+        let id = "cat" + i;
+        filters.insertAdjacentHTML("beforeend", `<a href="#${id}">${cat}</a>`);
+        out.insertAdjacentHTML(
+          "beforeend",
+          `<section class="category" id="${id}"><div class="category-title"><span>0${i + 1}</span><h2>${cat}</h2></div><div class="dish-list">${items
+            .map((x, j) => {
+              let [n, p, w] = x.split("|"),
+                photo = imageUrl(photoRows[i][j]);
+              return `<article><img src="${photo}" alt="${n}"><div><h3>${n}</h3><small>Фото блюда из меню кафе</small></div><span>${w}</span><b>${p}</b><a href="delivery.html">Заказать ↗</a></article>`;
+            })
+            .join("")}</div></section>`,
+        );
+      });
+    </script>
+    <div class="mobile-bar">
+      <a href="menu.html">Меню</a><a href="delivery.html">Заказать</a
+      ><a href="contacts.html">Маршрут</a>
+    </div>
+  </body>
+</html>
